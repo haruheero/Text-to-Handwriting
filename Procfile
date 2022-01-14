@@ -1,1 +1,1 @@
-web: gunicorn readfile:app
+web: gunicorn -b :$PORT readfile:app
