@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="{{url_for('static',filename='Images/favicon.ico')}}" type="image/x-icon">
+    <!-- <link rel="stylesheet" href="style.css"> -->
+
+    <link rel="stylesheet" href="{{url_for('static',filename='css/style.css')}}">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&family=Vidaloka&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/66717420c9.js" crossorigin="anonymous"></script>
+    <title>Text to Handwriting Converter</title>
+</head>
+<body>
+    <nav class="navbar">
+        <input type="checkbox" id="check">
+        <label for="check" class="checkbtn">
+        <i class="fas fa-bars"></i></label>
+        <label for="" class="logo"><img src="{{url_for('static',filename='Images/text.png')}}" alt="" height="70px"></label>
+        <ul class="navitems">
+            <li class="menu"><a href="#" class="item">Home</a></li>
+            <li class="menu"><a href="#about" class="item">About</a></li>
+            <li class="menu"><a href="#features" class="item">Features</a></li>
+            <li class="menu"><a href="#contact" class="item">Contact</a></li>
+            <li class="menu">
+                <input type="checkbox" name="checkbox" class="checkbox" id="checkbox">
+                <label for="checkbox" class="label">
+                    <i class="fas fa-moon"></i>
+                    <i class="fas fa-sun"></i>
+                    <div class="ball"></div>
+                </label>
+            </li>
+        </ul>
+    </nav>
+    <div class="container">
+        <section class="left section">
+            <h1>Text To Handwriting Converter</h1>
+            <div class="para">
+                <ul>
+                <li>Drag and drop</li>
+                <li>Accepted formats : txt, docx, pdf</li>
+                <li>No registration required</li>
+                </ul>
+            </div>
+        </section>
+        <section class="right section">
+            <div class="file">
+            <form action="/" method="post" enctype="multipart/form-data">
+            <label for="myfile" class="remove"><img src="{{url_for('static',filename='Images/files.png')}}" alt="" srcset="" height="70px"></label>
+                    {% if filename %}
+                    <div id="file-upload">
+                        <img src="{{ url_for('static', filename='readcontent/test1.png') }}" height="350px"width=400px>
+                        <br><br>
+                        <a class='download' href="/static/readcontent/test1.PNG" download="">Download photo</a>
+                        <a class='download' href="/static/readcontent/test1.pdf" download="">Download pdf</a>
+                    </div>
+                    {% endif %}
+            <br><br>
+                <label for="myfile" class="clickbutton remove">Upload your files here</label><br>
+                <input type="file" id="myfile" name="file"><br><br>
+                <button type="submit" class="remove">Submit</button>
+
+                    <p id="demo" class="remove"></p>
+            </form>
+            </div>
+        </section>
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <h2 class="headline" id="about">Best converter out there for text conversion</h2>
+        <p class="headline paragraph">Convert any text to handwriting in just a  simple click</p>
+        <div class="allfeatures">
+            <div class="features" >
+            <div class="left one ">Seamless conversion from text to handwriting</div>
+            <div class="right one color"><img src="{{url_for('static',filename='Images/converttext.png')}}" alt="" srcset="" height="200px"> </div>
+        </div>
+        <div class="features" id="features">
+            <div class="left two color"><img src="{{url_for('static',filename='Images/multiple.png')}}" alt="" height="200px"></div>
+            <div class="right two ">Different formats? We got it covered </div>
+        </div>
+        </div>
+    </div>
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <div class="info">How to upload?
+            <img src="{{url_for('static',filename='Images/file-upload.png')}}" alt="" height="100px">
+            <img src="{{url_for('static',filename='Images/dragdrop.png')}}" alt="" height="80px">
+        </div>
+    <footer id="contact">
+        Contact us on: +91 9415036350
+        <br>
+        Follow us on: <i class="fab fa-instagram"></i> <i class="fab fa-twitter"></i> <i class="fab fa-facebook"> </i> <i class="fab fa-linkedin"> </i>
+    </footer>
+    <script src="{{url_for('static',filename='js/files.js')}}"></script>
+</body>
+</html>
