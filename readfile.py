@@ -1,5 +1,3 @@
-from fileinput import filename
-import imp
 from flask import Flask, render_template,request,redirect
 import os
 from werkzeug.utils import secure_filename
