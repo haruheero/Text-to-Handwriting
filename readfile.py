@@ -8,9 +8,9 @@ from PIL import Image
 
 
 def readfile(filename):
-    ext = os.path.splitext('D:/pakhi/Documents/Competitons/Projects/text to handwriting/static/uploads/'+filename)[-1].lower()
+    ext = os.path.splitext(filename)[-1].lower()
     if ext=='.txt':
-        f = open(filename, 'r')
+        f = open('D:/pakhi/Documents/Competitons/Projects/text to handwriting/static/uploads/'+filename, 'r')
         readcontent = f.read()
         text = kit.text_to_handwriting(
             readcontent, 'D:/pakhi/Documents/Competitons/Projects/text to handwriting/static/readcontent/test1.PNG', rgb=(20, 20, 20))
