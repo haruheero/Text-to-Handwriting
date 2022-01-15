@@ -1,1 +1,1 @@
-web: gunicorn -b :$PORT readfile:app
+web: gunicorn --bind 0.0.0.0:$PORT readfile:app

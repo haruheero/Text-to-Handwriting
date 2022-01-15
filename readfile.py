@@ -8,14 +8,15 @@ from PIL import Image
 
 
 def readfile(filename):
-    ext=os.path.splitext(filename)[-1].lower()
+    ext = os.path.splitext('D:/pakhi/Documents/Competitons/Projects/text to handwriting/static/uploads/'+filename)[-1].lower()
     if ext=='.txt':
         f = open(filename, 'r')
         readcontent = f.read()
         text = kit.text_to_handwriting(
             readcontent, 'D:/pakhi/Documents/Competitons/Projects/text to handwriting/static/readcontent/test1.PNG', rgb=(20, 20, 20))
     elif ext=='.docx':
-        doc = docx.Document(filename)
+        doc = docx.Document(
+            'D:/pakhi/Documents/Competitons/Projects/text to handwriting/static/uploads/'+filename)
         doctext = []
         for singleline in doc.paragraphs:
             doctext.append(singleline.text)
@@ -23,7 +24,7 @@ def readfile(filename):
         text = kit.text_to_handwriting(
             readcontent, 'D:/pakhi/Documents/Competitons/Projects/text to handwriting/static/readcontent/test1.PNG', rgb=(20, 20, 20))
     elif ext=='.pdf':
-        pdf = filename
+        pdf = 'D:/pakhi/Documents/Competitons/Projects/text to handwriting/static/uploads/'+filename
         pdfread = PyPDF2.PdfFileReader(pdf)
         page = pdfread.getPage(0)
         pagecontent = page.extractText()
