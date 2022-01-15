@@ -65,7 +65,6 @@ def upload_image():
 
     return render_template('index.html')
 
-# print(filename)
 
 @app.route('/display/<filename>')
 def display_image(filename):
