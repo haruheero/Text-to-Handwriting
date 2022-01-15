@@ -43,7 +43,14 @@ The file can be downloaded by clicking on the respective buttons given below the
 
 <img src="https://user-images.githubusercontent.com/63349641/149622618-d56eb69f-58d3-4636-859e-a00ac4032dba.png" width="380">
 
-## Tech stack
+## Working and technologies used
+- Flask
+- HTML
+- CSS
+- JavaScript
+- Pywhatkit
+- Docx
+- PyPDF2
 
 Text to Handwriting makes use of flask, pywhatkit, PyPDF2, docx, PIL, werkzeug, os as main libraries of python. The file is first uploaded and then stored in the uploads folder.
 Then the file is read. The extension of the file is extracted then it is passed to the respective block to be further used. The file is then read by the filereaders and converted
