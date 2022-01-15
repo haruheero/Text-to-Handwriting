@@ -1,7 +1,7 @@
 from flask import Flask, render_template,request,redirect
 import os
 from werkzeug.utils import secure_filename
-import pywhatkit as kit
+from pywhatkit import text_to_handwriting
 import docx
 import PyPDF2
 from PIL import Image
@@ -12,7 +12,7 @@ def readfile(filename):
     if ext=='.txt':
         f = open('D:/pakhi/Documents/Competitons/Projects/text to handwriting/static/uploads/'+filename, 'r')
         readcontent = f.read()
-        text = kit.text_to_handwriting(
+        text = text_to_handwriting(
             readcontent, 'D:/pakhi/Documents/Competitons/Projects/text to handwriting/static/readcontent/test1.PNG', rgb=(20, 20, 20))
     elif ext=='.docx':
         doc = docx.Document(
@@ -21,7 +21,7 @@ def readfile(filename):
         for singleline in doc.paragraphs:
             doctext.append(singleline.text)
         readcontent='\n'.join(doctext)
-        text = kit.text_to_handwriting(
+        text = text_to_handwriting(
             readcontent, 'D:/pakhi/Documents/Competitons/Projects/text to handwriting/static/readcontent/test1.PNG', rgb=(20, 20, 20))
     elif ext=='.pdf':
         pdf = 'D:/pakhi/Documents/Competitons/Projects/text to handwriting/static/uploads/'+filename
@@ -29,7 +29,7 @@ def readfile(filename):
         page = pdfread.getPage(0)
         pagecontent = page.extractText()
         readcontent = ' '.join(pagecontent.split())
-        text = kit.text_to_handwriting(
+        text = text_to_handwriting(
             readcontent, 'D:/pakhi/Documents/Competitons/Projects/text to handwriting/static/readcontent/test1.PNG', rgb=(20, 20, 20))
     
     image = Image.open(
