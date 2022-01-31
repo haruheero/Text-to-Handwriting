@@ -1,6 +1,6 @@
 # Text to Handwriting
 
-Text to handwriting is an innovative app that can convert the text in uploaded documemnt to handwriting format. The file can be uploaded in the format of pdf, txt or docx.
+Text to handwriting is an innovative app that can convert the text in uploaded document to handwriting format. The file can be uploaded in the format of pdf, txt or docx.
 The text inside the file is then converted into handwriting using text_to_handwriting function of pywhatkit. The converted text is then returned inside an image format by the 
 pywhatkit library. The converted text image is displayed on the app.
 
@@ -9,7 +9,7 @@ pywhatkit library. The converted text image is displayed on the app.
 
 ## Usage
 
-To use the app the user should click on the upload your files here button.User will then be prompted to upload a file from their local machine.
+To use the app the user should click on the upload your files here button. User will then be prompted to upload a file from their local machine.
 
 ![image](https://user-images.githubusercontent.com/63349641/149621687-bd639d35-46b8-475e-88e5-85f89148f93b.png)
 
